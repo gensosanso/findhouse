@@ -15,46 +15,25 @@ import {useNavigate} from 'react-router-dom';
 
 const home = [
   {
-    name: "Home 1",
+    id: 1,
+    name: "Accueil",
     routerPath: "/",
   },
-  {
-    name: "Home 2",
-    routerPath: "/home-2",
-  },
-  {
-    name: "Home 3",
-    routerPath: "/home-3",
-  },
-  {
-    name: "Home 4",
-    routerPath: "/home-4",
-  },
-  {
-    name: "Home 5",
-    routerPath: "/home-5",
-  },
-  {
-    name: "Home 6",
-    routerPath: "/home-6",
-  },
-  {
-    name: "Home 7",
-    routerPath: "/home-7",
-  },
-  {
-    name: "Home 8",
-    routerPath: "/home-8",
-  },
-  {
-    name: "Home 9",
-    routerPath: "/home-9",
-  },
-  {
-    name: "Home 10",
-    routerPath: "/home-10",
-  },
+  // { id: 2, name: "Home 2", routerPath: "/home-2" },
+  // {
+  //   id: 3,
+  //   name: "Home 3",
+  //   routerPath: "/home-3",
+  // },
+  // { id: 4, name: "Home 4", routerPath: "/home-4" },
+  // { id: 5, name: "Home 5", routerPath: "/home-5" },
+  // { id: 6, name: "Home 6", routerPath: "/home-6" },
+  // { id: 7, name: "Home 7", routerPath: "/home-7" },
+  // { id: 8, name: "Home 8", routerPath: "/home-8" },
+  // { id: 9, name: "Home 9", routerPath: "/home-9" },
+  // { id: 10, name: "Home 10", routerPath: "/home-10" },
 ];
+
 
 const listing = [
   {
@@ -151,7 +130,7 @@ const listing = [
       },
       {
         name: "Agent Details",
-        routerPath: "/agent-details/2",
+        routerPath: "/agent-details/3",
       },
     ],
   },
@@ -169,17 +148,7 @@ const listing = [
       },
       {
         name: "Agencies Details",
-        routerPath: "/agency-details/2",
-      },
-    ],
-  },
-  {
-    id: 7,
-    title: "Create Listing",
-    items: [
-      {
-        name: "Create Listing",
-        routerPath: "/create-listing",
+        routerPath: "/agency-details/1",
       },
     ],
   },
@@ -234,11 +203,11 @@ const property = [
     items: [
       {
         name: "Single V1",
-        routerPath: "/listing-details-v1/2",
+        routerPath: "/listing-details-v1/3",
       },
       {
         name: "Single V2",
-        routerPath: "/listing-details-v2/3",
+        routerPath: "/listing-details-v2/2",
       },
       {
         name: "Single V3",
@@ -253,52 +222,28 @@ const property = [
 ];
 
 const blog = [
-  { id: 1, name: "Blog List 1", routerPath: "/blog-list-1" },
-  { id: 2, name: "Blog List 2", routerPath: "/blog-list-2" },
-  { id: 3, name: "Blog List 3", routerPath: "/blog-list-3" },
-  {
-    id: 4,
-    name: "Blog Details",
-    routerPath: "/blog-details/2",
-  },
+  // { id: 1, name: "Blog List 1", routerPath: "/blog-list-1" },
+  // { id: 2, name: "Blog List 2", routerPath: "/blog-list-2" },
+  { id: 3, name: "Blog", routerPath: "/blog-list-3" },
+  // {
+  //   id: 4,
+  //   name: "Blog Details",
+  //   routerPath: "/blog-details/2",
+  // },
 ];
 
 const pages = [
-  {
-    name: "About Us",
-    routerPath: "/about-us",
-  },
-  {
-    name: "Gallery",
-    routerPath: "/gallery",
-  },
-  {
-    name: "Faq",
-    routerPath: "/faq",
-  },
-  {
-    name: "LogIn",
-    routerPath: "/login",
-  },
-  { name: "Compare", routerPath: "/compare" },
-  { name: "Membership", routerPath: "/membership" },
+  { id: 1, name: "A Propos", routerPath: "/about-us" },
+  // { id: 2, name: "Gallery", routerPath: "/gallery" },
+  // { id: 3, name: "Faq", routerPath: "/faq" },
+  // { id: 4, name: "LogIn", routerPath: "/login" },
+  // { id: 5, name: "Compare", routerPath: "/compare" },
+  // { id: 6, name: "Membership", routerPath: "/membership" },
 
-  {
-    name: "Register",
-    routerPath: "/register",
-  },
-  {
-    name: "Service",
-    routerPath: "/service",
-  },
-  {
-    name: "404 Page",
-    routerPath: "/404",
-  },
-  {
-    name: "Terms & Conditions",
-    routerPath: "/terms",
-  },
+  // { id: 7, name: "Register", routerPath: "/register" },
+  // { id: 8, name: "Service", routerPath: "/service" },
+  // { id: 9, name: "404 Page", routerPath: "/404" },
+  { id: 10, name: "Termes & Conditions", routerPath: "/terms" },
 ];
 
 const MobileMenuContent = () => {
@@ -358,7 +303,7 @@ const MobileMenuContent = () => {
           </SubMenu>
           {/* End Home Home */}
 
-          <SubMenu
+          {/* <SubMenu
             label="Listing"
             className={
               listing.some((parent) => {
@@ -396,10 +341,10 @@ const MobileMenuContent = () => {
                 ))}
               </SubMenu>
             ))}
-          </SubMenu>
+          </SubMenu> */}
           {/* End Pages Listing */}
 
-          <SubMenu
+          {/* <SubMenu
             label="Property"
             className={
               property.some((parent) => {
@@ -444,7 +389,7 @@ const MobileMenuContent = () => {
                 ))}
               </SubMenu>
             ))}
-          </SubMenu>
+          </SubMenu> */}
           {/* End Pages Property */}
 
           <SubMenu
@@ -512,7 +457,7 @@ const MobileMenuContent = () => {
             </div>
           </MenuItem>
 
-          <MenuItem>
+          {/* <MenuItem>
             <div
             onClick={()=>navigate("/login")}
     
@@ -520,7 +465,7 @@ const MobileMenuContent = () => {
             >
               <span className="flaticon-user"></span> Login
             </div>
-          </MenuItem>
+          </MenuItem> */}
 
           <MenuItem>
             <div
@@ -538,13 +483,13 @@ const MobileMenuContent = () => {
       {/* </Sidebar> */}
 
       
-        <Link
+        {/* <Link
           to="/create-listing"
           className="btn btn-block btn-lg btn-thm circle"
           style={{width:'90%',margin:'0px auto'}}
         >
           <span className="flaticon-plus"></span> Create Listing
-        </Link></>
+        </Link></> */}
      
    
   );
