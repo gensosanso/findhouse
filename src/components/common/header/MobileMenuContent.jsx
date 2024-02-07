@@ -278,7 +278,21 @@ const MobileMenuContent = () => {
     {/* <Sidebar> */}
     <div style={{maxHeight:'calc(100vh - 100px)', overflowY:'auto'}}>
         <Menu>
-          <SubMenu
+          
+        {home.map((item) => (
+            <li key={item.id} style={{marginLeft:'20px'}} >
+              <Link
+                to={item.routerPath}
+                className={
+                  pathname?.split('/')[1] === item.routerPath?.split('/')[1] ? "ui-active" : undefined
+                }
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+
+          {/* <SubMenu
             label="Home"
            
             className={
@@ -300,7 +314,7 @@ const MobileMenuContent = () => {
                 </div>
               </MenuItem>
             ))}
-          </SubMenu>
+          </SubMenu> */}
           {/* End Home Home */}
 
           {/* <SubMenu
@@ -392,7 +406,7 @@ const MobileMenuContent = () => {
           </SubMenu> */}
           {/* End Pages Property */}
 
-          <SubMenu
+          {/* <SubMenu
             label="Blog"
             className={
               blog.some(
@@ -419,18 +433,26 @@ const MobileMenuContent = () => {
                 </div>
               </MenuItem>
             ))}
-          </SubMenu>
+          </SubMenu> */}
+          {blog.map((val, i) => (
+              <MenuItem key={i}>
+                <div
+                  onClick={()=>navigate(val.routerPath)}
+                  className={
+                    pathname?.split('/')[1] === val.routerPath?.split('/')[1] 
+                    // val.routerPath + "/[id]" === pathname.split('/')[1]
+                      ? "ui-active"
+                      : 'inactive-mobile-menu'
+                  }
+                >
+                  {val.name}
+                </div>
+              </MenuItem>
+            ))}
           {/* End pages Blog */}
 
-          <SubMenu
-            label="Pages"
-            className={
-              pages.some((page) => page.routerPath?.split('/')[1] === pathname.split('/')[1])
-                ? "parent-menu-active"
-                : 'inactive-mobile-menu'
-            }
-          >
-            {pages.map((val, i) => (
+         
+          {pages.map((val, i) => (
               <MenuItem key={i}>
                 <div
                   onClick={()=>navigate(val.routerPath)}
@@ -442,7 +464,6 @@ const MobileMenuContent = () => {
                 </div>
               </MenuItem>
             ))}
-          </SubMenu>
           {/* End pages Pages */}
 
           <MenuItem>
@@ -467,7 +488,7 @@ const MobileMenuContent = () => {
             </div>
           </MenuItem> */}
 
-          <MenuItem>
+          {/* <MenuItem>
             <div
             onClick={()=>navigate("/register")}
         
@@ -477,7 +498,7 @@ const MobileMenuContent = () => {
             >
               <span className="flaticon-edit"></span> Register
             </div>
-          </MenuItem>
+          </MenuItem> */}
         </Menu>
         </div>
       {/* </Sidebar> */}
@@ -489,7 +510,9 @@ const MobileMenuContent = () => {
           style={{width:'90%',margin:'0px auto'}}
         >
           <span className="flaticon-plus"></span> Create Listing
-        </Link></> */}
+        </Link> */}
+        
+        </>
      
    
   );
